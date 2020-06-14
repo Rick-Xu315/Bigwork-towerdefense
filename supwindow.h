@@ -16,6 +16,7 @@ class Supwindow : public QMainWindow
 public:
     explicit Supwindow(QWidget *parent = nullptr);
     void paintEvent(QPaintEvent*Event);
+
 signals:
     void Back();
 };

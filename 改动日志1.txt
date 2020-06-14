@@ -1,0 +1,16 @@
+版本2说明
+增加了防御塔放置处类（towerplace)，能够实现通过鼠标行为在特定位置放置防御塔
+
+增加了基础防御塔类（tower)，包括攻击范围的显示，子弹发射功能尚未完成
+
+增加了基地类（home），具有血量和血量显示等功能
+
+增加了路径拐点类（Changepoint)，为敌人按路径移动提供参照点
+
+增加了基础敌人类（Basic_enemy)，实现了敌人按设定路径移动（move)，按时间和波数生成（loadenemy)，血量和血量显示，实现与基地碰撞后自身的删除（removeenemy)和防御塔血量的减少（receivedamage)
+
+增加了背景音乐（采用QMediaplayerlist功能），并实现BGM的循环播放
+
+添加了公共函数类（Somefunction)，实现碰撞判断（bool collison)
+
+暂时无修复的bug

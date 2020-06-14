@@ -22,19 +22,21 @@ Supwindow::Supwindow(QWidget *parent) : QMainWindow(parent)
     Lev2but->setFixedSize(127,41);
     Lev1but->move(425,200);
     Lev2but->move(425,300);
-    Level1* level1=new Level1;
-    Level2* level2=new Level2;
+
+
     connect(Backbut1,&Button::clicked,this,[=](){
         emit Back();
 
     });
     connect(Lev1but,&Button::clicked,this,[=](){
         this->hide();
+        Level1* level1=new Level1;
         level1->show();
 
     });
     connect(Lev2but,&Button::clicked,this,[=](){
         this->hide();
+        Level2* level2=new Level2;
         level2->show();
 
     });
@@ -45,3 +47,9 @@ void Supwindow::paintEvent(QPaintEvent*event){
  QPixmap pixmap(":/0pic2.png");
  painter.drawPixmap(0,0,this->width(),this->height(),pixmap);
 }
+
+
+
+
+
+

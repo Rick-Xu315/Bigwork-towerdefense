@@ -8,11 +8,16 @@
 #include<QPushButton>
 #include<QDebug>
 #include<QPainter>
+#include<QMediaPlaylist>
+#include<QMediaPlayer>
+#include<QUrl>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
+
+    setBGM();
     this->setFixedSize(960,540);
     ui->setupUi(this);
     Button *Startbut=new Button(":/0start.png");
@@ -39,4 +44,16 @@ void MainWindow::paintEvent(QPaintEvent*event){
  QPainter painter(this);
  QPixmap pixmap(":/0pic1.png");
  painter.drawPixmap(0,0,this->width(),this->height(),pixmap);
+
+}
+void MainWindow::setBGM()
+{
+
+    BGMlist->addMedia(QUrl("qrc:/bgm1.mp3"));
+    BGMlist->setCurrentIndex(1);
+    BGMlist->setPlaybackMode(QMediaPlaylist::CurrentItemInLoop);
+    QMediaPlayer *player=new QMediaPlayer;
+    player->setPlaylist(BGMlist);
+    player->setVolume(10);
+    player->play();
 }

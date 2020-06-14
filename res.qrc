@@ -8,8 +8,13 @@
         <file>1grass.png</file>
         <file>2desert.png</file>
         <file>3heart.png</file>
-        <file>4tower.png</file>
         <file>0level1.png</file>
         <file>0level2.png</file>
+        <file>bgm1.mp3</file>
+        <file>0place.png</file>
+        <file>basictower.png</file>
+        <file>basictowercard.png</file>
+        <file>basicenemy.png</file>
+        <file>home.png</file>
     </qresource>
 </RCC>

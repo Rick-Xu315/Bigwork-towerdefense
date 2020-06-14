@@ -1,4 +1,5 @@
 QT       += core gui
+QT       +=multimedia
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -16,19 +17,30 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    basic_enemy.cpp \
     button.cpp \
+    changepoint.cpp \
+    home.cpp \
     level1.cpp \
     level2.cpp \
     main.cpp \
     mainwindow.cpp \
-    supwindow.cpp
+    supwindow.cpp \
+    tower.cpp \
+    towerplace.cpp
 
 HEADERS += \
+    Somefunction.h \
+    basic_enemy.h \
     button.h \
+    changepoint.h \
+    home.h \
     level1.h \
     level2.h \
     mainwindow.h \
-    supwindow.h
+    supwindow.h \
+    tower.h \
+    towerplace.h
 
 FORMS += \
     mainwindow.ui
