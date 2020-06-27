@@ -1,0 +1,26 @@
+#ifndef BULLECT_H
+#define BULLECT_H
+
+#include <QObject>
+#include<basic_enemy.h>
+#include<QPainter>
+class Bullect
+{
+    Q_OBJECT
+    Q_PROPERTY(QPoint _currentplace READ currentPlace WRITE setCurrentplace)
+public:
+    Bullect(QPoint startplace,QPoint targetplace,int power,Basic_enemy*aimenemy,QString pic);
+    void draw(QPainter*painter)const;
+    void move();
+    void setCurrentplace(QPoint place);
+    QPoint currentPlace()const;
+public slots:
+    void hit();
+private:
+    const QPoint _startplace;
+    const QPoint _targetplace;
+    QPixmap _pic;
+    B
+};
+
+#endif // BULLECT_H

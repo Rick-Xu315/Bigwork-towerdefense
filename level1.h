@@ -16,38 +16,51 @@
 #include<QPainter>
 #include<QList>
 #include<home.h>
+#include"bullets.h"
 
 class Level1 : public QMainWindow
 {
     Q_OBJECT
 public:
     explicit Level1(QWidget*parent=nullptr);
+    Level1(QWidget *parent,int level,QPoint homeplace);
     void paintEvent(QPaintEvent*Event);
-
+void drawvolume(QPainter*painter);
     void Back();
-    void loadTowerplace();
+    void loadTowerplace1();
+    void loadTowerplace2();
     void mousePressEvent(QMouseEvent *event);
-    bool canBuy();
-    void loadChangepoint();
-
+    bool canBuy(int cost);
+    void loadChangepoint1();
+    void loadChangepoint2();
+void removeBullet(Bullets*bullet);
     void UpdateAll();
     void receivedamage();
     void removeenemy(Basic_enemy*enemy);
-    void Updateenemylist();
+    void removetower(Tower*tower);
+    void loadbullet(Bullets*bullet);
+void gameover();
     bool loadwave();
 
-private:
-    Home*home=new Home(QPoint(768,250),":/home.png");
+    QList<Basic_enemy*>_basicenemy;
+    QList<Bullets*>_bullet;
     QList<Towerplace> _towerplace;
+
+private:
+    int _level;
+    Home*home;
+
     QList<Tower*> _tower;
     QList<Changepoint*>_changepoint;
-    QList<Basic_enemy*>_basicenemy;
+
+    int _money;
     int _waves;
     bool _win;
-
+    bool _end;
 
 
 signals:
+    void backtosup();
 
 };
 

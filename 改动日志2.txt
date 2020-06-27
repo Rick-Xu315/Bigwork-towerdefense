@@ -1,0 +1,34 @@
+版本3说明
+增加了子弹类Bullets，在tower,enemy,level1类中多方关联实现了敌人中弹血量减少和死亡的机制
+
+将tower类改写成了抽象类，在tower中实现了子弹的发射功能,实现对敌人类（enemy)的消除
+
+实现了游戏胜负的判定和金钱机制（资源的可积累性），杀死敌人后可获得金钱(_reward)
+购买塔和升级时会进行金钱可行性判度（canBuy)
+
+在关卡类（Level1)中增加了按钮实现胜负判定后可回到二级菜单
+实现在关卡运行时对怪物波数（_waves），金钱（_money)，关卡数（level)的可视化
+
+增加了tower的派生类
+减速塔freezetower 自爆塔boomtower 普通塔commontower，通过将基类的升级函数（levelup)和属性设置函数（setvolume)设置成纯虚函数实现基类指针调用派生类函数，实现升级的多态
+freezetower升级后攻击范围（_range)和攻击速度（_rate)提升
+commontower升级后威力(_damage)和攻击速度(_rate)提升
+
+增添了tower派生类的新功能
+减速塔freezetower实现对敌人定时减速(getfrozen)
+自爆塔实现将攻击范围内的敌人全部消灭，同时销毁自身(boom)
+
+将enemy类改写为抽象类，增加了enemy的派生类
+普通怪物commonenemy
+精英怪物eliteenemy 血量更高，同时增添了新功能狂暴（getrage)，在受到攻击时会短暂加速
+自爆怪物 boomerenemy 具有超高的移速
+
+通过对关卡类（Level1)的参数设定，实现了多关卡
+在Level1类的构造函数形参表中增加  int level,以实现通过构造时参数的设定执行不同的场景构建
+
+添加了部分音效
+通过QMediaplayer实现放置防御塔类时的音效
+
+至此基本功能，关卡切换功能，多样性的防御塔和怪物类，资源积累功能基本完成
+
+

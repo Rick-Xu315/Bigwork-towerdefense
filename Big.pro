@@ -4,9 +4,9 @@ QT       +=multimedia
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11
+# any Qt feature that has been marked deprecated (the exact warnings
 
 # The following define makes your compiler emit warnings if you use
-# any Qt feature that has been marked deprecated (the exact warnings
 # depend on your compiler). Please consult the documentation of the
 # deprecated API in order to know how to port your code away from it.
 DEFINES += QT_DEPRECATED_WARNINGS
@@ -18,13 +18,21 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     basic_enemy.cpp \
+    boomerenemy.cpp \
+    boomtower.cpp \
+    bullets.cpp \
     button.cpp \
     changepoint.cpp \
+    commonenemy.cpp \
+    commontower.cpp \
+    eliteenemy.cpp \
+    freezetower.cpp \
     home.cpp \
     level1.cpp \
-    level2.cpp \
     main.cpp \
     mainwindow.cpp \
+    selectfuncbox.cpp \
+    selectremovebox.cpp \
     supwindow.cpp \
     tower.cpp \
     towerplace.cpp
@@ -32,12 +40,20 @@ SOURCES += \
 HEADERS += \
     Somefunction.h \
     basic_enemy.h \
+    boomerenemy.h \
+    boomtower.h \
+    bullets.h \
     button.h \
     changepoint.h \
+    commonenemy.h \
+    commontower.h \
+    eliteenemy.h \
+    freezetower.h \
     home.h \
     level1.h \
-    level2.h \
     mainwindow.h \
+    selectfuncbox.h \
+    selectremovebox.h \
     supwindow.h \
     tower.h \
     towerplace.h

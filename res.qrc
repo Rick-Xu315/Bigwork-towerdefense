@@ -16,5 +16,29 @@
         <file>basictowercard.png</file>
         <file>basicenemy.png</file>
         <file>home.png</file>
+        <file>bullet1.png</file>
+        <file>towerbutton1.png</file>
+        <file>towerbutton2.png</file>
+        <file>towerbutton3.png</file>
+        <file>towerbutton4.png</file>
+        <file>removebutton.png</file>
+        <file>levelupbutton.png</file>
+        <file>eliteenemy.png</file>
+        <file>boomerenemy.png</file>
+        <file>freezetower.png</file>
+        <file>bgm2.mp3</file>
+        <file>wrong.wav</file>
+        <file>win.wav</file>
+        <file>shovel.wav</file>
+        <file>set.wav</file>
+        <file>rage.wav</file>
+        <file>lose.pkf</file>
+        <file>lose.wav</file>
+        <file>levelup.wav</file>
+        <file>freeze.wav</file>
+        <file>dead.wav</file>
+        <file>boom.wav</file>
+        <file>lose.png</file>
+        <file>win.png</file>
     </qresource>
 </RCC>

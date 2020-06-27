@@ -21,3 +21,4 @@ inline bool collision(QPoint point1,int r1,QPoint point2,int r2)
         return true;
     else return false;
 }
+

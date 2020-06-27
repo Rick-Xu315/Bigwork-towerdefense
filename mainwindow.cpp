@@ -52,8 +52,9 @@ void MainWindow::setBGM()
     BGMlist->addMedia(QUrl("qrc:/bgm1.mp3"));
     BGMlist->setCurrentIndex(1);
     BGMlist->setPlaybackMode(QMediaPlaylist::CurrentItemInLoop);
-    QMediaPlayer *player=new QMediaPlayer;
+
     player->setPlaylist(BGMlist);
-    player->setVolume(10);
+    player->setVolume(20);
     player->play();
+
 }

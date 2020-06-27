@@ -1,7 +1,6 @@
 #include "supwindow.h"
 #include"button.h"
 #include"level1.h"
-#include"level2.h"
 #include<QPointer>
 #include<QPixmap>
 #include<QPaintEvent>
@@ -30,16 +29,30 @@ Supwindow::Supwindow(QWidget *parent) : QMainWindow(parent)
     });
     connect(Lev1but,&Button::clicked,this,[=](){
         this->hide();
-        Level1* level1=new Level1;
+        Level1* level1=new Level1(this,1,QPoint(768,250));
         level1->show();
+        connect(level1,&Level1::backtosup,this,[=](){
+            level1->hide();
+            this->show();
+
+        });
 
     });
     connect(Lev2but,&Button::clicked,this,[=](){
         this->hide();
-        Level2* level2=new Level2;
+        Level1* level2=new Level1(this,2,QPoint(780,168));
         level2->show();
+        connect(level2,&Level1::backtosup,this,[=](){
+            level2->hide();
+            this->show();
+
+
+
+        });
 
     });
+
+
 
 }
 void Supwindow::paintEvent(QPaintEvent*event){

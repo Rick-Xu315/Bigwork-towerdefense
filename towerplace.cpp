@@ -1,6 +1,8 @@
 #include "towerplace.h"
 #include"button.h"
 #include"supwindow.h"
+#include"selectfuncbox.h"
+#include"selectremovebox.h"
 #include<QPointer>
 #include<QPixmap>
 #include<QPaintEvent>
@@ -9,10 +11,11 @@
 #include<QPainter>
 #include<QMediaPlayer>
 #include<QUrl>
-
-Towerplace::Towerplace(QPoint place,const QPixmap &pic)
-    :_place(place),_filled(false),_pic(pic)
+#include"level1.h"
+Towerplace::Towerplace(QPoint place,Level1*game, const QPixmap &pic)
+    : _place(place),_tower(NULL),_pic(pic),_filled(false),_funcbox(new Selectfuncbox(place,this,game)),_removebox(new Selectremovebox(place,this,game))
 {
+
 
 }
 const QSize Towerplace::_size(63,63);
@@ -45,10 +48,10 @@ QPoint Towerplace::getplace()
     return _place;
 }
 
-
-
-
-
+void Towerplace::setTower(Tower *tower)
+{
+    _tower=tower;
+}
 
 
 

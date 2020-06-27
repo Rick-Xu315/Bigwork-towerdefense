@@ -13,25 +13,36 @@
 #include<QPainter>
 #include<QMediaPlayer>
 #include<QUrl>
-
+#include"selectfuncbox.h"
+#include"selectremovebox.h"
+class Tower;
+class Level1;
 class Towerplace
 {
 
 public:
     explicit Towerplace(QObject *parent = nullptr);
-    Towerplace(QPoint place,const QPixmap &pic=QPixmap(":/0place.png"));
+    Towerplace(QPoint place,Level1*game, const QPixmap &pic=QPixmap(":/0place.png"));
     void fill(bool filled=true);
     bool filled() const;
     const QPoint center() const;
     bool contain(const QPoint&place)const;
     void draw(QPainter*painter);
     QPoint getplace();
+    void setTower(Tower*tower);
+    Tower* _tower;
+    Selectfuncbox*_funcbox;
+    Selectremovebox*_removebox;
+
+
 
 private:
+    Level1* _game;
     QPoint _place;
     bool _filled;
     QPixmap _pic;
     static const QSize _size;
+
 
 
 

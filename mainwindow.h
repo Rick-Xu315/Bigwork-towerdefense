@@ -29,5 +29,6 @@ public:
 private:
     Ui::MainWindow *ui;
     QMediaPlaylist *BGMlist=new QMediaPlaylist;
+    QMediaPlayer *player=new QMediaPlayer;
 };
 #endif // MAINWINDOW_H
